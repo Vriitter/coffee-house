@@ -340,3 +340,53 @@ section {
    gap: 8px;
    font-weight: 600;
 }
+
+
+/* COFFEE PAGE */
+
+.drinks {
+   margin-bottom: 0;
+}
+
+.drinks__title {
+   width: 800px;
+   margin: 0 auto 40px;
+   text-align: center;
+}
+
+.drinks__menu {
+   display: flex;
+   gap: 16px;
+   justify-content: center;
+   margin-bottom: 40px;
+   font-weight: 600;
+}
+
+.drinks__link {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   padding: 8px 16px 8px 8px;
+   border-radius: 100px;
+   border: 1px solid #c1b6ad;
+}
+
+.drinks__link--active {
+   border: 1px solid #665F55;
+   color: #e1d4c9;
+   background-color: #665F55;
+}
+
+.drinks__link-icon {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 30px;
+   height: 30px;
+   border-radius: 100px;
+   background-color: #c1b6ad;
+}
+
+.drinks__link-icon--active {
+   background-color: #e1d4c9;
+}
