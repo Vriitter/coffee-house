@@ -2,6 +2,7 @@
 *::before,
 *::after {
    box-sizing: border-box;
+   scroll-behavior: smooth;
 }
 
 a {
@@ -64,11 +65,28 @@ section {
    gap: 40px;
 }
 
+.header__menu-item:hover {
+   text-decoration: underline;
+   text-underline-offset: 4px;
+   text-decoration-thickness: 2px;
+   text-underline-position: under;
+}
+
 .header__btn {
    display: flex;
    gap: 8px;
    align-items: start;
 }
+
+.header__btn:hover {
+   border-bottom: 2px solid #403F3D;
+}
+
+.header__btn--active {
+   border-bottom: 2px solid #403F3D;
+   pointer-events: none;
+}
+
 
 /* Hero */
 
@@ -102,6 +120,7 @@ section {
 }
 
 .hero__btn {
+   position: relative;
    width: 200px;
    height: 64px;
    border: none;
@@ -114,6 +133,22 @@ section {
    color: #403f3d;
    background-color: #e1d4c9;
 } 
+
+.hero__btn::after {
+   position: absolute;
+   top: 21px;
+   left: 126px;
+   content: '';
+   width: 20px;
+   height: 20px;
+   background: url(../img/icons/coffee-cup.svg);
+   opacity: 0;
+   transition: opacity 0.3s ease-in-out; 
+}
+
+.hero__btn:hover::after {
+   opacity: 1; 
+}
 
 /* Favorite-coffee */
 
@@ -172,6 +207,16 @@ section {
    border: 1px solid #665F55;
    border-radius: 100px;
    background-color: transparent;
+}
+
+.slider__btn:hover {
+   background-color: #665f55;
+   transition: all 0.5s;
+}
+
+.slider__btn:hover svg path {
+   stroke: #e1d4c9;
+   transition: all 0.5s;
 }
 
 .slider__controls {
@@ -276,6 +321,17 @@ section {
    cursor: pointer;
 }
 
+.mobile__button:hover {
+   color: #e1d4c9;
+   background-color: #665f55;
+   transition: all 0.5s;
+}
+
+.mobile__button:hover svg path{
+   fill: #e1d4c9;
+   transition: all 0.5s;
+}
+
 .mobile__button-text {
    display: flex;
    flex-direction: column;
@@ -324,6 +380,16 @@ section {
    border-radius: 100px;
 }
 
+.footer__social-link:hover {
+   background-color: #e1d4c9;
+   transition: all 0.5s;
+}
+
+.footer__social-link:hover svg path{
+   stroke: #403f3d;
+   transition: all 0.5s;
+}
+
 .footer__contacts-title {
    margin-bottom: 40px;
    font-weight: 600;
@@ -336,9 +402,22 @@ section {
 }
 
 .footer__contacts-link {
-   display: flex;
-   gap: 8px;
+   display: inline-block;
    font-weight: 600;
+   border-bottom: 2px solid transparent;
+}
+
+.footer__contacts-icon,
+.footer__contacts-text {
+   display: inline-block;
+}
+
+.footer__contacts-icon {
+   margin-right: 8px;
+}
+
+.footer__contacts-link:hover {
+   border-bottom-color: #e1d4c9;
 }
 
 
@@ -375,6 +454,7 @@ section {
    border: 1px solid #665F55;
    color: #e1d4c9;
    background-color: #665F55;
+   pointer-events: none;
 }
 
 .drinks__link-icon {
@@ -401,6 +481,7 @@ section {
 }
 
 .card {
+   position: relative;
    width: 310px;
    height: 506px;
    border: 1px solid #c1b6ad;
